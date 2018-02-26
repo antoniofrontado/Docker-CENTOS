@@ -1,0 +1,31 @@
+Explicaremos como colocar un servidor Docker para instalar Rstudio.
+
+pasos
+
+1. Instalar centos 7
+2. Instalar docker para Centos 7
+
+
+Pasos para poner a correr Rstudio en docker
+
+1. Buscar la imagen con el comando 
+
+docker search rstudio
+
+2. Descargamos la imagen con el comando 
+
+docker pull rocker/rstudio
+
+3.iniciamos la imagen docker con el puerto 8787 y de una vez colocamos la clave nueva
+
+docker run -d -p 8787:8787 -e PASSWORD=TUCLAVENUEVA rocker/rstudio
+
+4. Luego ejecutamos un terminal para añadir los usuarios es importante decir el contenedor ID
+
+docker exec -it CONTENEDORID bash
+
+5. Añadimos a los usuarios
+
+adduser alex
+
+Con esto tendremos una sesion para cada usuario en Rstudio.
